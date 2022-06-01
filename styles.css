@@ -121,3 +121,14 @@ button:focus {
 		width: 90%;
 	}
 }
+
+/* Media query: large smartphone (horizontal). */
+@media screen and (max-height: 600px) {
+	.calculator {
+		height: 350px;
+	}
+
+	button {
+		min-height: 38px;
+	}
+}

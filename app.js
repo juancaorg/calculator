@@ -1,3 +1,4 @@
+// Get display and button elements.
 const calculatorDisplay = document.querySelector("h1");
 const inputButtons = document.querySelectorAll("button");
 const clearButton = document.getElementById("clear-btn");
@@ -31,17 +32,17 @@ function addDecimal() {
 	}
 }
 
-// Calculate first and second values
-// depending on operator.
-const calculate = {
-	"/": (firstNumber, secondNumber) => firstNumber / secondNumber,
-	"*": (firstNumber, secondNumber) => firstNumber * secondNumber,
-	"-": (firstNumber, secondNumber) => firstNumber - secondNumber,
-	"+": (firstNumber, secondNumber) => firstNumber + secondNumber,
-	"=": (firstNumber, secondNumber) => secondNumber
-};
-
 function useOperator(operator) {
+	// Calculate first and second values
+	// depending on operator.
+	const calculate = {
+		"/": (firstNumber, secondNumber) => firstNumber / secondNumber,
+		"*": (firstNumber, secondNumber) => firstNumber * secondNumber,
+		"-": (firstNumber, secondNumber) => firstNumber - secondNumber,
+		"+": (firstNumber, secondNumber) => firstNumber + secondNumber,
+		"=": (firstNumber, secondNumber) => secondNumber
+	};
+
 	const currentValue = Number(calculatorDisplay.textContent);
 
 	// Prevent multiple operators at a time.

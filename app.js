@@ -10,6 +10,13 @@ function sendNumberValue(number) {
 		displayValue === "0" ? number : displayValue + number;
 }
 
+function addDecimal() {
+	// If no decimal, add one.
+	if (!calculatorDisplay.textContent.includes(".")) {
+		calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
+	}
+}
+
 // Add Event Listeners for numbers
 // operators and decimal buttons.
 inputButtons.forEach((input) => {
@@ -18,6 +25,14 @@ inputButtons.forEach((input) => {
 	} else if (input.classList.contains("operator")) {
 		input.addEventListener("click", () => sendNumberValue(input.value));
 	} else if (input.classList.contains("decimal")) {
-		input.addEventListener("click", () => sendNumberValue(input.value));
+		input.addEventListener("click", addDecimal);
 	}
 });
+
+// Reset display.
+function resetAll() {
+	calculatorDisplay.textContent = "0";
+}
+
+// Clear button Event Listener.
+clearButton.addEventListener("click", resetAll);

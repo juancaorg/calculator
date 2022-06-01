@@ -64,6 +64,14 @@ function useOperator(operator) {
 	operatorValue = operator;
 }
 
+// Reset all values and display.
+function resetAll() {
+	firstValue = 0;
+	operatorValue = "";
+	awaitingNextValue = false;
+	calculatorDisplay.textContent = "0";
+}
+
 // Add Event Listeners for numbers
 // operators and decimal buttons.
 inputButtons.forEach((input) => {
@@ -76,13 +84,6 @@ inputButtons.forEach((input) => {
 	}
 });
 
-// Reset all values and display.
-function resetAll() {
-	firstValue = 0;
-	operatorValue = "";
-	awaitingNextValue = false;
-	calculatorDisplay.textContent = "0";
-}
-
 // Clear button Event Listener.
 clearButton.addEventListener("click", resetAll);
+
